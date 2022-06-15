@@ -12,10 +12,10 @@ using Xamarin.Forms.Xaml;
 namespace eShopOnContainers.Core.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class SuView : ContentPage
+    public partial class GazlıiçecekView : ContentPage
     {
         ProductService productService = new ProductService();
-        public SuView()
+        public GazlıiçecekView()
         {
             InitializeComponent();
         }
@@ -56,7 +56,7 @@ namespace eShopOnContainers.Core.Views
             await DisplayAlert("Uyarı", "Favorilere Eklendi", "Tamam");
         }
 
-        private void telefonListesi_ItemTapped(object sender, ItemTappedEventArgs e)
+        private void bulasikMakinesiListesi_ItemTapped(object sender, ItemTappedEventArgs e)
         {
 
         }

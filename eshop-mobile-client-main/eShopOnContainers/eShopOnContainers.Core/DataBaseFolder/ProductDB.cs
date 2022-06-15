@@ -19,7 +19,7 @@ namespace eShopOnContainers.Core.DatabaseFolder
         {
 
 
-            await firebase.Child("Sepet").PostAsync(JsonConvert.SerializeObject(product));
+            await firebase.Child("Sepet").PostAsync(JsonConvert.SerializeObject(product));//sepet
 
 
         }
@@ -66,7 +66,7 @@ namespace eShopOnContainers.Core.DatabaseFolder
         {
 
             return (await firebase
-              .Child("Sepet")
+              .Child("Sepet")  // sepet
               .OnceAsync<Product>()).Select(item => new Product
               {
                   Id = item.Object.Id,

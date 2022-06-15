@@ -16,31 +16,27 @@ namespace eShopOnContainers.Core.ViewModels
 
         public ICommand GazlıİçecekButtonu { get; set; }
 
-        public ICommand SoğukKahveButtonu { get; set; }
+       
 
         public İçecekViewModel(INavigation navigation)
         {
             this.Navigation = navigation;
             this.SuButtonu = new Command(async () => await MSu());
             this.GazlıİçecekButtonu = new Command(async () => await MGazlıİçecek());
-            this.SoğukKahveButtonu = new Command(async () => await MSoğukKahve());
-
+            
 
         }
 
-        private async Task MSoğukKahve()
-        {
-            await Navigation.PushModalAsync(new BuzDolabiView());
-        }
+      
 
         private async Task MGazlıİçecek()
         {
-            await Navigation.PushModalAsync(new BulasikMakinesiView());
+            await Navigation.PushModalAsync(new GazlıiçecekView());
         }
 
         private async Task MSu()
         {
-            await Navigation.PushModalAsync(new TelefonView());
+            await Navigation.PushModalAsync(new SuView());
         }
     }
 }

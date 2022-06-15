@@ -24,7 +24,7 @@
 
                 <Button Text="Su"  TextColor="Black"  BackgroundColor="#ffc200" Command="{Binding SuButtonu}" />
                 <Button Text="Gazlı İçecek"  TextColor="Black" BackgroundColor="#ffc200" Command="{Binding GazlıİçecekButtonu}" />
-                <Button Text="Soğuk Kahve"  TextColor="Black" BackgroundColor="#ffc200" Command="{Binding SoğukKahveButtonu}" />
+               
 
             </StackLayout>
 

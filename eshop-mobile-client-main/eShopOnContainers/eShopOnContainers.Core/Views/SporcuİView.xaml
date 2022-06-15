@@ -1,16 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="eShopOnContainers.Core.Views.Aramalar"
-             Title="Arama"
-             >
+             xmlns:pages="clr-namespace:eShopOnContainers.Core.ViewModels"
+             x:Class="eShopOnContainers.Core.Views.Sporcuİç">
+    <ContentPage.BindingContext>
+        <pages:SporcuİçViewModel></pages:SporcuİçViewModel>
+    </ContentPage.BindingContext>
     <ContentPage.Content>
         <StackLayout>
 
-            <Frame CornerRadius="10" IsClippedToBounds="True" Padding="0" Margin="5">
-                <SearchBar Placeholder="Ürün Ara" BackgroundColor="White" TextChanged="SearchBar_TextChanged"/>
-            </Frame>
-
+           
 
             <StackLayout Orientation="Vertical">
 
@@ -18,7 +17,7 @@
 
                     <StackLayout  VerticalOptions="FillAndExpand" HorizontalOptions="Center" Padding="10">
 
-                        <ListView  x:Name="urunListesi" HorizontalOptions="StartAndExpand" VerticalOptions="FillAndExpand"
+                        <ListView ItemTapped="islakHavluListesi_ItemTapped" ItemsSource="{Binding SporcuİçListesi}" x:Name="islakHavluListesi" HorizontalOptions="StartAndExpand" VerticalOptions="FillAndExpand"
                             SeparatorColor="LightGray" SeparatorVisibility="Default" HasUnevenRows="True" 
                             >
 
@@ -37,13 +36,17 @@
 
 
                                                 <StackLayout Orientation="Vertical" Padding="2" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
-
+                                                    <StackLayout Orientation="Horizontal">
+                                                        <ImageButton Source="https://pics.freeicons.io/uploads/icons/png/6892028711582634780-64.png" HeightRequest="30" BackgroundColor="White"  Clicked="ImageButton_Clicked"/>
+                                                    </StackLayout>
                                                     <Image Source="{Binding ProductImageUrl}" WidthRequest="100" HeightRequest="100"/>
                                                     <Label Text="{Binding ProductName}" FontSize="20" Margin="2" TextColor="Black" FontAttributes="Bold"/>
-                                                    <Label Text="{Binding UnitPrice}" FontSize="16" Margin="2" TextColor="#eb3443"/>
+                                                    <Label Text="{Binding UnitPrice}" FontSize="16" Margin="2" TextColor="#ffc200"/>
 
-
-
+                                                    <StackLayout Orientation="Horizontal">
+                                                        <Button Text="Sepete Ekle" TextColor="Black" BackgroundColor="#ffc200"  HorizontalOptions="Start"  CornerRadius="25" Clicked="Button_Clicked"/>
+                                                       
+                                                    </StackLayout>
 
 
 
@@ -66,6 +69,9 @@
                 </StackLayout>
 
             </StackLayout>
+
+
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

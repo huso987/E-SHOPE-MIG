@@ -41,6 +41,15 @@
     <EmbeddedResource Include="Fonts\Font_Awesome_5_Free-Solid-900.otf" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Views\SporcuİView.xaml.cs">
+      <DependentUpon>SporcuİView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\SağlıkTakviyeleriView.xaml.cs">
+      <DependentUpon>SağlıkTakviyeleriView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\GazlıİçecekView.xaml.cs">
+      <DependentUpon>GazlıİçecekView.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\DondurulmuşView.xaml.cs">
       <DependentUpon>DondurulmuşView.xaml</DependentUpon>
     </Compile>
@@ -64,6 +73,9 @@
     </Compile>
     <Compile Update="Views\MezeView.xaml.cs">
       <DependentUpon>MezeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\SuView.xaml.cs">
+      <DependentUpon>SuView.xaml</DependentUpon>
     </Compile>
     <Compile Update="Views\ÇikolataView.xaml.cs">
       <DependentUpon>ÇikolataView.xaml</DependentUpon>
@@ -109,13 +121,13 @@
     <EmbeddedResource Update="Views\Aramalar.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\BebekBeziView.xaml">
+    <EmbeddedResource Update="Views\SağlıkTakviyeleriView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\BebekSampuaniView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\BulasikMakinesiView.xaml">
+    <EmbeddedResource Update="Views\GazlıİçecekView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\BuzDolabiView.xaml">
@@ -136,7 +148,7 @@
     <EmbeddedResource Update="Views\GazozView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\IslakHavluView.xaml">
+    <EmbeddedResource Update="Views\SporcuİView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\KahveView.xaml">
@@ -166,7 +178,7 @@
     <EmbeddedResource Update="Views\ÇikolataView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\TelefonView.xaml">
+    <EmbeddedResource Update="Views\SuView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\BarView.xaml">

@@ -9,66 +9,62 @@
     <ContentPage.Content>
         <StackLayout>
 
-            <Frame CornerRadius="10" IsClippedToBounds="True" Padding="0" Margin="5">
-                <SearchBar Placeholder="Su Ara" BackgroundColor="White" />
-            </Frame>
+           
 
 
+            <StackLayout  VerticalOptions="FillAndExpand" HorizontalOptions="Center" Padding="10">
 
-            <StackLayout Orientation="Vertical">
-
-                <StackLayout>
-
-                    <StackLayout  VerticalOptions="FillAndExpand" HorizontalOptions="Center" Padding="10">
-
-                        <ListView ItemTapped="suListesi_ItemTapped" ItemsSource="{Binding SuListesi}"  x:Name="suListesi" HorizontalOptions="StartAndExpand" VerticalOptions="FillAndExpand"
+                <ListView ItemTapped="telefonListesi_ItemTapped" ItemsSource="{Binding SuListesi}" x:Name="telefonListesi" HorizontalOptions="StartAndExpand" VerticalOptions="FillAndExpand"
                             SeparatorColor="LightGray" SeparatorVisibility="Default" HasUnevenRows="True" 
                             >
 
 
-                            <ListView.ItemTemplate>
+                    <ListView.ItemTemplate>
 
-                                <DataTemplate>
-                                    <ViewCell>
-                                        <StackLayout Orientation="Horizontal" Padding="5" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal" Padding="5" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"
                                             MinimumHeightRequest="100">
 
 
-                                            <Frame BorderColor="Gray" CornerRadius="8">
+                                    <Frame BorderColor="Gray" CornerRadius="8">
 
 
 
 
-                                                <StackLayout Orientation="Vertical" Padding="2" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                                        <StackLayout Orientation="Vertical" Padding="2" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                                            <StackLayout Orientation="Horizontal" >
+                                                <ImageButton Source="https://pics.freeicons.io/uploads/icons/png/6892028711582634780-64.png" HeightRequest="30" BackgroundColor="White"  Clicked="ImageButton_Clicked"/>
 
-                                                    <Image Source="{Binding ProductImageUrl}" WidthRequest="100" HeightRequest="100"/>
-                                                    <Label Text="{Binding ProductName}" FontSize="20" Margin="2" TextColor="Black" FontAttributes="Bold"/>
-                                                    <Label Text="{Binding UnitPrice}" FontSize="16" Margin="2" TextColor="#eb3443"/>
-                                                    <StackLayout Orientation="Horizontal">
-                                                        <Button Text="Sepete Ekle"  HorizontalOptions="Start"  CornerRadius="25" Clicked="Button_Clicked"/>
-                                                        <ImageButton Source="https://pics.freeicons.io/uploads/icons/png/21452079141582962144-512.png" HeightRequest="30" BackgroundColor="White"  Clicked="ImageButton_Clicked"/>
-                                                    </StackLayout>
+                                            </StackLayout>
+                                            <Image Source="{Binding ProductImageUrl}" WidthRequest="100" HeightRequest="100"/>
+                                            <Label Text="{Binding ProductName}" FontSize="20" Margin="2" TextColor="Black" FontAttributes="Bold"/>
+                                            <Label Text="{Binding UnitPrice}" FontSize="16" Margin="2" TextColor="#ffc200"/>
+                                            <StackLayout Orientation="Horizontal">
+                                                <Button Text="Sepete Ekle" TextColor="Black" BackgroundColor="#ffc200"  HorizontalOptions="Start"  CornerRadius="25" Clicked="Button_Clicked"/>
+                                               
+                                            </StackLayout>
 
 
-
-                                                </StackLayout>
-                                            </Frame>
 
                                         </StackLayout>
-                                    </ViewCell>
-                                </DataTemplate>
+                                    </Frame>
+
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
 
 
-                            </ListView.ItemTemplate>
+                    </ListView.ItemTemplate>
 
 
 
-                        </ListView>
+                </ListView>
 
-                    </StackLayout>
-
-                </StackLayout>
             </StackLayout>
+
+
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

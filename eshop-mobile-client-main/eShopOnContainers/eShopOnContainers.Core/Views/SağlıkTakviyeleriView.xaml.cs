@@ -12,14 +12,34 @@ using Xamarin.Forms.Xaml;
 namespace eShopOnContainers.Core.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class SuView : ContentPage
+    public partial class sağlıktakviyeView : ContentPage
     {
         ProductService productService = new ProductService();
-        public SuView()
+        public sağlıktakviyeView()
         {
             InitializeComponent();
         }
 
+        private async void ImageButton_Clicked(object sender, EventArgs e)
+        {
+
+            Product productToFavorite = new Product();
+
+            var item = sender as ImageButton;
+            var obj = item.BindingContext as Product;
+
+            productToFavorite.Id = obj.Id;
+            productToFavorite.CategoryId = obj.CategoryId;
+            productToFavorite.ProductName = obj.ProductName;
+            productToFavorite.ProductImageUrl = obj.ProductImageUrl;
+            productToFavorite.UnitPrice = obj.UnitPrice;
+
+            await productService.AddFavorite(productToFavorite);
+
+            await DisplayAlert("Uyarı", "Favorilere Eklendi", "Tamam");
+
+        }
+        
         private async void Button_Clicked(object sender, EventArgs e)
         {
             Product productToBasket = new Product();
@@ -38,27 +58,11 @@ namespace eShopOnContainers.Core.Views
             await DisplayAlert("Uyarı", "Sepete Eklendi", "Tamam");
         }
 
-        private async void ImageButton_Clicked(object sender, EventArgs e)
-        {
-            Product productToFavorite = new Product();
-
-            var item = sender as ImageButton;
-            var obj = item.BindingContext as Product;
-
-            productToFavorite.Id = obj.Id;
-            productToFavorite.CategoryId = obj.CategoryId;
-            productToFavorite.ProductName = obj.ProductName;
-            productToFavorite.ProductImageUrl = obj.ProductImageUrl;
-            productToFavorite.UnitPrice = obj.UnitPrice;
-
-            await productService.AddFavorite(productToFavorite);
-
-            await DisplayAlert("Uyarı", "Favorilere Eklendi", "Tamam");
-        }
-
-        private void telefonListesi_ItemTapped(object sender, ItemTappedEventArgs e)
+        private void bebekBeziListesi_ItemTapped(object sender, ItemTappedEventArgs e)
         {
 
         }
+
+        
     }
 }

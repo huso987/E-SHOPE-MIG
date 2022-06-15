@@ -29,12 +29,12 @@ namespace eShopOnContainers.Core.ViewModels
        
         private async Task MSporcuİçecegi()
         {
-            await Navigation.PushModalAsync(new IslakHavluView());
+            await Navigation.PushModalAsync(new Sporcuİç());
         }
 
         private async Task MsağlıkTakviye()
         {
-            await Navigation.PushModalAsync(new BebekBeziView());
+            await Navigation.PushModalAsync(new sağlıktakviyeView());
         }
     }
 }
