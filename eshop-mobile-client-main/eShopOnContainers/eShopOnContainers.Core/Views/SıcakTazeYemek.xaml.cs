@@ -1,4 +1,5 @@
-﻿using System;
+﻿using eShopOnContainers.Core.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,9 @@ namespace eShopOnContainers.Core.Views
         public SıcakTazeYemek()
         {
             InitializeComponent();
+            BindingContext = new SıcakTazeYemekViewModel(Navigation);
         }
+
+        
     }
 }

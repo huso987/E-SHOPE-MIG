@@ -24,7 +24,8 @@ namespace eShopOnContainers.Core.ViewModels
         private bool _isValid;
         private bool _isLogin;
         private string _authUrl;
-        UserService  userService =new UserService();
+
+        UserService userService = new UserService();
 
         private ISettingsService _settingsService;
         private IOpenUrlService _openUrlService;
@@ -112,17 +113,12 @@ namespace eShopOnContainers.Core.ViewModels
         public ICommand NavigateCommand => new Command<string>(async (url) => await NavigateAsync(url));
 
         public ICommand SettingsCommand => new Command(async () => await SettingsAsync());
+
         public ICommand LoginClicked => new Command(LoginClickedButton);
 
         public ICommand ValidateUserNameCommand => new Command(() => ValidateUserName());
 
         public ICommand ValidatePasswordCommand => new Command(() => ValidatePassword());
-
-
-        private async void LoginClickedButton()
-        {
-            await userService.Add(this.UserName);
-        }
 
         public override Task InitializeAsync (IDictionary<string, string> query)
         {
@@ -134,6 +130,12 @@ namespace eShopOnContainers.Core.ViewModels
             }
 
             return Task.CompletedTask;
+        }
+
+
+        private async void LoginClickedButton()
+        {
+            await userService.Add(this.UserName);
         }
 
         private async Task MockSignInAsync()
@@ -166,6 +168,7 @@ namespace eShopOnContainers.Core.ViewModels
                 _settingsService.AuthAccessToken = GlobalSetting.Instance.AuthToken;
 
                 await NavigationService.NavigateToAsync ("//Main/Catalog");
+                
             }
 
             IsBusy = false;

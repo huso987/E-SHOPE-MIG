@@ -1,4 +1,5 @@
 ﻿using eShopOnContainers.Core.Models.User;
+using eShopOnContainers.Core.Validations;
 using System;
 using System.Threading.Tasks;
 
@@ -25,6 +26,11 @@ namespace eShopOnContainers.Core.Services.User
             CardHolder = "American Express",
             CardSecurityNumber = "1234"
         };
+
+        public Task Add(ValidatableObject<string> username)
+        {
+            throw new NotImplementedException();
+        }
 
         public async Task<UserInfo> GetUserInfoAsync(string authToken)
         {

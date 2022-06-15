@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="eShopOnContainers.Core.Views.İçecek"
+             xmlns:viewmodels="clr-namespace:eShopOnContainers.Core.ViewModels"
+             x:DataType="viewmodels:İçecekViewModel"
+             >
+    <ContentPage.Resources>
+
+        <ResourceDictionary>
+            <Color x:Key="Accent">#ffc200</Color>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+
+
+
+    <ScrollView>
+
+
+        <StackLayout Orientation="Vertical">
+            <StackLayout Orientation="Horizontal">
+
+                <Button Text="Su"  TextColor="Black"  BackgroundColor="#ffc200" Command="{Binding SuButtonu}" />
+                <Button Text="Gazlı İçecek"  TextColor="Black" BackgroundColor="#ffc200" Command="{Binding GazlıİçecekButtonu}" />
+                <Button Text="Soğuk Kahve"  TextColor="Black" BackgroundColor="#ffc200" Command="{Binding SoğukKahveButtonu}" />
+
+            </StackLayout>
+
+
+        </StackLayout>
+
+    </ScrollView>
+   
+</ContentPage>

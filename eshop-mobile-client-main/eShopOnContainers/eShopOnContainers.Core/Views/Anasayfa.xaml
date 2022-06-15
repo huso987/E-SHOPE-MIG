@@ -1,140 +1,228 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="eShopOnContainers.Core.Views.Anasayfa"
-            
-             
-             >
-    
-    <Shell.TitleView   >
+             x:Class="eShopOnContainers.Core.Views.AnaSayfa"
+             xmlns:viewmodels="clr-namespace:eShopOnContainers.Core.ViewModels"
+             x:DataType="viewmodels:AnasayfaViewModel">
+    <Shell.TitleView >
+
         <Image Source="https://www.birnoktabir.com/wp-content/uploads/2020/08/migros-logo.jpg"
            HorizontalOptions="Start"
               BackgroundColor="White"
                WidthRequest="100"
                HeightRequest="30"
            />
+
+
+
+
     </Shell.TitleView>
-    <ContentPage.Content>
-        <ScrollView>
-            <StackLayout Orientation="Vertical">
+    <!--<ContentPage.BindingContext>
+        <vm:AnasayfaViewModel />
+    </ContentPage.BindingContext>-->
 
-                <StackLayout BackgroundColor="White">
-                    <Frame CornerRadius="10" IsClippedToBounds="True" Padding="0" Margin="5">
-                        <SearchBar x:Name="aramacubugu" Placeholder="Neye ihtiyacın var ?"   BackgroundColor="WhiteSmoke" TextColor="Black"   />
-                    </Frame>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Accent">#96d1ff</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
 
 
-                    <StackLayout HeightRequest="100" Padding="5" >
-                        <Frame CornerRadius="20" IsClippedToBounds="True" Padding="2" HorizontalOptions="FillAndExpand"  VerticalOptions="FillAndExpand">
-                            <CarouselView x:Name="Slider" AutomationId="5" >
+    <ScrollView>
+        <StackLayout Orientation="Vertical">
 
-                                <CarouselView.ItemTemplate>
+            <StackLayout BackgroundColor="White">
 
-                                    <DataTemplate>
-                                        <Image
+
+
+                <Frame CornerRadius="10" IsClippedToBounds="True" Padding="0" Margin="5">
+                    <SearchBar x:Name="searchResults" Placeholder="Ürün Ara" BackgroundColor="White" />
+                </Frame>
+
+
+                <StackLayout HeightRequest="100" Padding="5">
+                    <Frame CornerRadius="10" IsClippedToBounds="True" Padding="-15">
+                        <CarouselView x:Name="fotolar" >
+
+                            <CarouselView.ItemTemplate>
+
+                                <DataTemplate >
+                                    <Image
                                 Source="{Binding}"
                                 />
-                                    </DataTemplate>
-                                </CarouselView.ItemTemplate>
-                            </CarouselView>
-                        </Frame>
-
-                    </StackLayout>
-                </StackLayout>
-
-
-                <StackLayout>
-
-
-                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
-
-
-
-                        <StackLayout >
-
-                            <ImageButton Source="https://migros-dali-storage-prod.global.ssl.fastly.net/hemen/custom/hemen_ev_yemekleri_ikon-0504fb62.png" Aspect="AspectFit" HeightRequest="70" BackgroundColor="White" WidthRequest="100" VerticalOptions="Center" />
-                            <Label Text="Sıcak - Taze Yemek"  Padding="5"></Label>
-
-                        </StackLayout>
-                        <StackLayout >
-                            <ImageButton Source="https://migros-dali-storage-prod.global.ssl.fastly.net/hemen/custom/meyvesebze-cafd29cd.png" Aspect="AspectFit" BackgroundColor="White" HeightRequest="70" WidthRequest="100" VerticalOptions="Center" />
-
-
-                            <Label Text="Meyve - Sebze" Padding="5"></Label>
-
-                        </StackLayout>
-                        <StackLayout >
-
-
-
-                            <ImageButton Source="https://migros-dali-storage-prod.global.ssl.fastly.net/hemen/custom/atistirmalik-5f5dcd3f.png" Aspect="AspectFit" HeightRequest="70" WidthRequest="100" BackgroundColor="White" VerticalOptions="Center" />
-                            <Label Text="  Atıştırmalık" Padding="5"></Label>
-
-                        </StackLayout>
-
-
-
-                    </StackLayout>
-                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center"  VerticalOptions="Center">
-                        <StackLayout >
-
-                            <ImageButton Source="https://migros-dali-storage-prod.global.ssl.fastly.net/hemen/custom/f4cbff5d-e199-4a8d-80d4-8e7af7be149e-8628f2a5.png" Aspect="AspectFit" BackgroundColor="White" HeightRequest="70" WidthRequest="100" VerticalOptions="Center" />
-                            <Label Text="Hızlı Yemek - Meze" Padding="5"></Label>
-
-                        </StackLayout>
-                        <StackLayout >
-
-                            <ImageButton Source="https://migros-dali-storage-prod.global.ssl.fastly.net/hemen/custom/cbb05f48-4ea6-45fc-855f-1863b77155a4-12ce96c1.png" Aspect="AspectFit" HeightRequest="70" BackgroundColor="White" WidthRequest="100"  VerticalOptions="Center"/>
-                            <Label Text="      İçecek"  Padding="5"></Label>
-
-
-                        </StackLayout>
-                        <StackLayout >
-
-
-
-                            <ImageButton Source="https://migros-dali-storage-prod.global.ssl.fastly.net/hemen/custom/hareketegec-0e6a6b9c.png" Aspect="AspectFit" HeightRequest="70" WidthRequest="100" BackgroundColor="White"  VerticalOptions="Center"/>
-                            <Label Text="Harekete Geç" Padding="5"></Label>
-
-                        </StackLayout>
-
-
-
-                    </StackLayout>
-                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
-                        <StackLayout >
-
-                            <ImageButton Source="https://migros-dali-storage-prod.global.ssl.fastly.net/hemen/custom/21d2e2d2-1efe-490d-b801-ab27b8330d81-07fed35d.png" Aspect="AspectFit" HeightRequest="70" BackgroundColor="White" WidthRequest="100" VerticalOptions="Center"/>
-                            <Label Text="   Dondurma" Padding="5"></Label>
-
-                        </StackLayout>
-
-
-                        <StackLayout >
-
-                            <ImageButton Source="https://migros-dali-storage-prod.global.ssl.fastly.net/hemen/custom/ozel_beslenme-2d9003d8.png" Aspect="AspectFit" HeightRequest="70" BackgroundColor="White" WidthRequest="100" VerticalOptions="Center" />
-                            <Label Text="Özel Beslenme"  Padding="5"></Label>
-
-                        </StackLayout>
-
-
-                        <StackLayout >
-
-
-
-                            <ImageButton Source="https://migros-dali-storage-prod.global.ssl.fastly.net/hemen/custom/f%C4%B1r%C4%B1n-1f4a9a48.png" Aspect="AspectFit" HeightRequest="70" WidthRequest="100" BackgroundColor="White" VerticalOptions="Center"/>
-                            <Label Text="        Fırın" Padding="5"></Label>
-
-                        </StackLayout>
-
-
-
-                    </StackLayout>
-
+                                </DataTemplate>
+                            </CarouselView.ItemTemplate>
+                        </CarouselView>
+                    </Frame>
 
                 </StackLayout>
             </StackLayout>
 
-        </ScrollView>
-    </ContentPage.Content>
+
+            <StackLayout>
+
+
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+
+
+                    <StackLayout >
+
+                        <Frame BorderColor="LightGray" CornerRadius="8">
+
+                            <ImageButton HeightRequest="80" WidthRequest="80" Command="{Binding SıcakTazeYemek}" BackgroundColor="White"
+                    
+                            Source="https://migros-dali-storage-prod.global.ssl.fastly.net/hemen/custom/hemen_ev_yemekleri_ikon-0504fb62.png"
+                            />
+
+                        </Frame>
+
+
+                        <Label Text="Sıcak - Taze Yemek" Padding="5" TextColor="Black"></Label>
+
+                    </StackLayout>
+                    <StackLayout >
+
+                        <Frame BorderColor="LightGray" CornerRadius="8">
+
+                            <ImageButton HeightRequest="80" WidthRequest="80"  Command="{Binding MeyveSebze}" BackgroundColor="White"
+                    
+                            Source="https://migros-dali-storage-prod.global.ssl.fastly.net/hemen/custom/meyvesebze-cafd29cd.png" 
+                            />
+
+                        </Frame>
+
+
+                        <Label Text="Meyve - Sebze"  Padding="5" TextColor="Black" ></Label>
+
+                    </StackLayout>
+                    <StackLayout >
+
+                        <Frame BorderColor="LightGray" CornerRadius="8">
+
+                            <ImageButton HeightRequest="80" WidthRequest="80" Command="{Binding Atıştırmalık}" BackgroundColor="White"
+                    
+                            Source="https://migros-dali-storage-prod.global.ssl.fastly.net/hemen/custom/atistirmalik-5f5dcd3f.png"
+                               
+                            />
+
+                        </Frame>
+
+
+                        <Label Text="   Atıştırmalık" Padding="5" TextColor="Black"></Label>
+
+                    </StackLayout>
+
+
+
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="Center">
+                    <StackLayout >
+
+                        <Frame BorderColor="LightGray" CornerRadius="8">
+
+                            <ImageButton HeightRequest="80" WidthRequest="80" Command="{Binding HızlıYemek}"
+                    
+                            Source="https://migros-dali-storage-prod.global.ssl.fastly.net/hemen/custom/f4cbff5d-e199-4a8d-80d4-8e7af7be149e-8628f2a5.png" BackgroundColor="White"
+                            />
+
+                        </Frame>
+
+
+                        <Label Text="Hızlı Yemek - Meze" Padding="5" TextColor="Black"></Label>
+
+                    </StackLayout>
+                    <StackLayout >
+
+                        <Frame BorderColor="LightGray" CornerRadius="8">
+
+                            <ImageButton HeightRequest="80" WidthRequest="80" Command="{Binding İçecek}" 
+                    
+                             Source="https://migros-dali-storage-prod.global.ssl.fastly.net/hemen/custom/cbb05f48-4ea6-45fc-855f-1863b77155a4-12ce96c1.png" BackgroundColor="White" 
+                            />
+
+                        </Frame>
+
+
+                        <Label Text="      İçecek" x:Name="deneme" Padding="5" TextColor="Black" ></Label>
+
+                    </StackLayout>
+                    <StackLayout >
+
+                        <Frame BorderColor="LightGray" CornerRadius="8">
+
+                            <ImageButton HeightRequest="80" WidthRequest="80" Command="{Binding HareketeGeç}"
+                    
+                            Source="https://migros-dali-storage-prod.global.ssl.fastly.net/hemen/custom/hareketegec-0e6a6b9c.png" BackgroundColor="White" 
+                                
+                             />
+
+                        </Frame>
+
+
+
+                        <Label Text="Harekete Geç" Padding="5" TextColor="Black" ></Label>
+
+                    </StackLayout>
+
+
+
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                    <StackLayout >
+
+
+                        <Frame BorderColor="LightGray" CornerRadius="8">
+                            <ImageButton HeightRequest="80" WidthRequest="80"
+                    
+                                Source="https://migros-dali-storage-prod.global.ssl.fastly.net/hemen/custom/21d2e2d2-1efe-490d-b801-ab27b8330d81-07fed35d.png" BackgroundColor="White"
+                                />
+                        </Frame>
+
+                        <Label Text="    Dondurma" Padding="5" TextColor="Black"></Label>
+
+                    </StackLayout>
+                    <StackLayout >
+
+                        <Frame BorderColor="LightGray" CornerRadius="8">
+
+                            <ImageButton HeightRequest="80" WidthRequest="80" HorizontalOptions="Fill"
+                    
+                                Source="https://migros-dali-storage-prod.global.ssl.fastly.net/hemen/custom/ozel_beslenme-2d9003d8.png" BackgroundColor="White" 
+                                />
+
+                        </Frame>
+
+
+                        <Label Text="Özel Beslenme"  Padding="5" TextColor="Black"></Label>
+
+                    </StackLayout>
+                    <StackLayout >
+
+
+                        <Frame BorderColor="LightGray" CornerRadius="8">
+
+                            <ImageButton HeightRequest="80" WidthRequest="80" HorizontalOptions="Fill"
+                    
+                                Source="https://migros-dali-storage-prod.global.ssl.fastly.net/hemen/custom/f%C4%B1r%C4%B1n-1f4a9a48.png" BackgroundColor="White" 
+                               
+                    />
+
+
+
+                            <!--<Button Text="Profilim" Clicked="ProfilimClicked"></Button>-->
+
+                        </Frame>
+                        <Label Text="        Fırın" Padding="5" TextColor="Black"></Label>
+                    </StackLayout>
+
+
+
+
+                </StackLayout>
+
+
+            </StackLayout>
+        </StackLayout>
+
+    </ScrollView>
 </ContentPage>

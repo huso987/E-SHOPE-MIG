@@ -2,6 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="eShopOnContainers.Core.Views.SıcakTazeYemek"
+             xmlns:viewmodels="clr-namespace:eShopOnContainers.Core.ViewModels"
+             x:DataType="viewmodels:SıcakTazeYemekViewModel"
              Title="Sıcak - Taze Yemek"
              >
 
@@ -13,14 +15,17 @@
         </ResourceDictionary>
     </ContentPage.Resources>
 
+
+
+
     <ScrollView>
 
 
         <StackLayout Orientation="Vertical">
             <StackLayout Orientation="Horizontal">
 
-                <Button Text="Migros Ev Lezetleri" x:Name="N1" TextColor="Black"  BackgroundColor="White"  />
-                <Button Text="Pizza MiGo" x:Name="N2" TextColor="Black" BackgroundColor="White"  />
+                <Button Text="Migros Ev Lezetleri"  TextColor="Black"  BackgroundColor="#ffc200" Command="{Binding MigrosEvLez}"  />
+                <Button Text="Pizza MiGo"  TextColor="Black" BackgroundColor="#ffc200" Command="{Binding PizzaMiG}"   />
 
             </StackLayout>
 

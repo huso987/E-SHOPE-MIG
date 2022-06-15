@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="eShopOnContainers.Core.Views.Aramalar">
+    <ContentPage.Content>
+        <StackLayout>
+
+            <Frame CornerRadius="10" IsClippedToBounds="True" Padding="0" Margin="5">
+                <SearchBar Placeholder="Ürün Ara" BackgroundColor="White" TextChanged="SearchBar_TextChanged"/>
+            </Frame>
+
+
+            <StackLayout Orientation="Vertical">
+
+                <StackLayout>
+
+                    <StackLayout  VerticalOptions="FillAndExpand" HorizontalOptions="Center" Padding="10">
+
+                        <ListView  x:Name="urunListesi" HorizontalOptions="StartAndExpand" VerticalOptions="FillAndExpand"
+                            SeparatorColor="LightGray" SeparatorVisibility="Default" HasUnevenRows="True" 
+                            >
+
+
+                            <ListView.ItemTemplate>
+
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <StackLayout Orientation="Horizontal" Padding="5" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"
+                                            MinimumHeightRequest="100">
+
+
+                                            <Frame BorderColor="Gray" CornerRadius="8">
+
+
+
+
+                                                <StackLayout Orientation="Vertical" Padding="2" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+
+                                                    <Image Source="{Binding ProductImageUrl}" WidthRequest="100" HeightRequest="100"/>
+                                                    <Label Text="{Binding ProductName}" FontSize="20" Margin="2" TextColor="Black" FontAttributes="Bold"/>
+                                                    <Label Text="{Binding UnitPrice}" FontSize="16" Margin="2" TextColor="#eb3443"/>
+
+
+
+
+
+
+                                                </StackLayout>
+                                            </Frame>
+
+                                        </StackLayout>
+                                    </ViewCell>
+                                </DataTemplate>
+
+
+                            </ListView.ItemTemplate>
+
+
+
+                        </ListView>
+
+                    </StackLayout>
+
+                </StackLayout>
+
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

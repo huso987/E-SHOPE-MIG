@@ -3,6 +3,7 @@ using System;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace eShopOnContainers.Core.Views
@@ -70,5 +71,7 @@ namespace eShopOnContainers.Core.Views
                 Debug.WriteLine(ex.Message);
             }
         }
+
+        
     }
 }

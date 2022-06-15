@@ -6,11 +6,14 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace eShopOnContainers.Core.DataBaseFolder
+namespace eShopOnContainers.Core.DatabaseFolder
 {
     public class CustomerDB
     {
-        readonly FirebaseClient firebase = new FirebaseClient("https://migroshacerhuso-default-rtdb.europe-west1.firebasedatabase.app/");
+
+        readonly FirebaseClient firebase = new FirebaseClient("https://customerlist123-42a86-default-rtdb.firebaseio.com/");
+
+
 
         public async Task SaveCustomer(ValidatableObject<string> username)
         {
@@ -18,7 +21,6 @@ namespace eShopOnContainers.Core.DataBaseFolder
             await firebase.Child("Müşteriler").PostAsync(JsonConvert.SerializeObject(username));
 
         }
-
 
     }
 }

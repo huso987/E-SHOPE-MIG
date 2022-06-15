@@ -1,4 +1,4 @@
-﻿using eShopOnContainers.Core.DataBaseFolder;
+﻿using eShopOnContainers.Core.DatabaseFolder;
 using eShopOnContainers.Core.Helpers;
 using eShopOnContainers.Core.Models.User;
 using eShopOnContainers.Core.Services.RequestProvider;
@@ -8,17 +8,17 @@ using System.Threading.Tasks;
 
 namespace eShopOnContainers.Core.Services.User
 {
-    
     public class UserService : IUserService
     {
-        
-
         private readonly IRequestProvider _requestProvider;
-        CustomerDB   customer_db = new CustomerDB();
+        CustomerDB customerDB = new CustomerDB();
+
+
         public UserService()
         {
 
         }
+
         public UserService(IRequestProvider requestProvider)
         {
             _requestProvider = requestProvider;
@@ -35,7 +35,7 @@ namespace eShopOnContainers.Core.Services.User
         public async Task Add(ValidatableObject<string> username)
         {
 
-            await customer_db.SaveCustomer(username);
+            await customerDB.SaveCustomer(username);
 
 
 

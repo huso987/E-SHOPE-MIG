@@ -46,7 +46,7 @@
                 <Setter Property="FontSize"
                     Value="{StaticResource LittleSize}" />
                 <Setter Property="TextColor"
-                    Value="{StaticResource GreenColor}" />
+                    Value="#0192FF" />
                 <Setter Property="HorizontalOptions"
                     Value="Start" />
             </Style>
@@ -140,37 +140,29 @@
                   Grid.Column="0"
                   Orientation="Horizontal"
                   HorizontalOptions="Center">
+                 
                     
                 </StackLayout>
                 <Grid
                   Grid.Column="1"
                   HorizontalOptions="Center">
-                    
+                    <Label
+                        Text=""
+                        TextColor="Gray"/>
                 </Grid>
-                <StackLayout  
-                  Grid.Column="2"
-                  Orientation="Horizontal"
-                  HorizontalOptions="Center">
-                    
-                    <StackLayout.GestureRecognizers>
-                        <TapGestureRecognizer
-                            Command="{Binding SettingsCommand}"
-                            NumberOfTapsRequired="1" />
-                    </StackLayout.GestureRecognizers>
+                <StackLayout>
+
                 </StackLayout>
             </Grid>
             <!-- INFO -->
-            <Label
-              Grid.Row="1"
-             
-              Style="{StaticResource TitleLabelStyle}"/>
+            
             <!-- LOGIN FORM -->
             <StackLayout   
                 Grid.Row="3"
                 Margin="24">
                 <Label
                   Text="Kullanıcı Adı"
-                  TextColor="#ffc200"
+                    TextColor="#ffc200"
                   Style="{StaticResource HeaderLabelStyle}" />
                 <Entry Text="{Binding UserName.Value, Mode=TwoWay}">
 					<Entry.Style>
@@ -189,7 +181,7 @@
 							TargetType="Entry"
 							Binding="{Binding UserName.IsValid}"
 							Value="False">
-							<Setter Property="behaviors:LineColorBehavior.LineColor" Value="{StaticResource ErrorColor}" />
+							<Setter Property="behaviors:LineColorBehavior.LineColor" Value="Black" />
 						</DataTrigger>
 					</Entry.Triggers>
                 </Entry>
@@ -198,7 +190,7 @@
 					Style="{StaticResource ValidationErrorLabelStyle}" />
                 <Label
                   Text="Şifre"
-                    TextColor="#ffc200"
+                  TextColor="#ffc200"
                   Style="{StaticResource HeaderLabelStyle}"/>
                 <Entry
                   IsPassword="True"
@@ -219,7 +211,7 @@
 							TargetType="Entry"
 							Binding="{Binding Password.IsValid}"
 							Value="False">
-							<Setter Property="behaviors:LineColorBehavior.LineColor" Value="{StaticResource ErrorColor}" />
+							<Setter Property="behaviors:LineColorBehavior.LineColor" Value="Black" />
 						</DataTrigger>
 					</Entry.Triggers>
                 </Entry>
@@ -242,14 +234,16 @@
                 ColumnSpacing="0"
                 RowSpacing="0">
                 <Label
-                  Text="Giriş Yap"
-                    TextColor="Black"
-                  Style="{StaticResource LoginButtonStyle}">
-
+                  Text=" Giriş Yap "
+                  Style="{StaticResource LoginButtonStyle}"
+                    
+                   >
                     <Label.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding LoginClicked}" />
                     </Label.GestureRecognizers>
                 </Label>
+                    
+                
                 <Grid.GestureRecognizers>
                     <TapGestureRecognizer
                         Command="{Binding MockSignInCommand}"
