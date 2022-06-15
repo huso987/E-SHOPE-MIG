@@ -14,21 +14,35 @@ namespace eShopOnContainers.Core.ViewModels
         public ICommand MigrosEvLez { get; set; }
         public ICommand PizzaMiG { get; set; }
 
+
+        interface SıcaKTazeYemek
+        {
+            void MigrosEvLez();
+
+            void PizzaMiG();
+
+        }
+
+
+       
+        
         public SıcakTazeYemekViewModel(INavigation navigation)
         {
             this.Navigation = navigation;
             this.MigrosEvLez = new Command(async () => await MMigrosEvLez());
             this.PizzaMiG = new Command(async () => await MPizzaMiG());
         }
+        
+       
+            private async Task MPizzaMiG()
+            {
+                await Navigation.PushModalAsync(new PizzaMiGView());
+            }
 
-        private async Task MPizzaMiG()
-        {
-            await Navigation.PushModalAsync(new SebzeView());
-        }
-
-        private async Task MMigrosEvLez()
-        {
-           await Navigation.PushModalAsync(new MeyveView());
-        }
+            private async Task MMigrosEvLez()
+            {
+                await Navigation.PushModalAsync(new MigrosEvLezzetleri());
+            }
+        
     }
 }

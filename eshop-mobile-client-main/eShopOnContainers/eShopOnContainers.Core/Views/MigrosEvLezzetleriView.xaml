@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:pages="clr-namespace:eShopOnContainers.Core.ViewModels"
+             x:Class="eShopOnContainers.Core.Views.MigrosEvLezzetleri" 
+             Title="Migros Ev Lezzetleri"
+             
+             >
+    <ContentPage.BindingContext>
+        <pages:MigrosEvLezzetleriViewModel></pages:MigrosEvLezzetleriViewModel>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout>
+
+
+            
+
+
+            <StackLayout  VerticalOptions="FillAndExpand" HorizontalOptions="Center" Padding="10">
+
+                <ListView ItemTapped="meyveListesi_ItemTapped" ItemsSource="{Binding MigrosEvListesi}" x:Name="meyveListesi" HorizontalOptions="StartAndExpand" VerticalOptions="FillAndExpand"
+                            SeparatorColor="LightGray" SeparatorVisibility="Default" HasUnevenRows="True" 
+                            >
+
+
+                    <ListView.ItemTemplate>
+
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal" Padding="5" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"
+                                            MinimumHeightRequest="100">
+
+
+                                    <Frame BorderColor="Gray" CornerRadius="8">
+
+
+
+
+                                        <StackLayout Orientation="Vertical" Padding="2" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                                            <StackLayout Orientation="Horizontal">
+                                                <ImageButton Source="https://pics.freeicons.io/uploads/icons/png/6892028711582634780-64.png" HeightRequest="30" BackgroundColor="White" HorizontalOptions="End" Clicked="ImageButton_Clicked"/>
+                                            </StackLayout>
+                                            <Image Source="{Binding ProductImageUrl}" WidthRequest="100" HeightRequest="100"/>
+                                            <Label Text="{Binding ProductName}" FontSize="20" Margin="2" TextColor="Black" FontAttributes="Bold"/>
+                                            <Label Text="{Binding UnitPrice}" FontSize="16" Margin="2" TextColor="#ffc200"/>
+                                            <StackLayout Orientation="Horizontal">
+                                                <Button Text="Sepete Ekle" TextColor="Black" BackgroundColor="#ffc200"  HorizontalOptions="Center"  CornerRadius="25" Clicked="Button_Clicked"/>
+                                                
+                                            </StackLayout>
+
+
+
+                                        </StackLayout>
+                                    </Frame>
+
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+
+
+                    </ListView.ItemTemplate>
+
+
+
+                </ListView>
+
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
