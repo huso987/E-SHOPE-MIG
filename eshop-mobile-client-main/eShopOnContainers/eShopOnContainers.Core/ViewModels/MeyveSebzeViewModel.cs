@@ -30,12 +30,12 @@ namespace eShopOnContainers.Core.ViewModels
 
         private async Task MSebze()
         {
-            await Navigation.PushModalAsync(new DenizMahsulleriKategorisiView());
+            await Navigation.PushModalAsync(new SebzeView());
         }
 
         private async Task MMeyve()
         {
-            await Navigation.PushModalAsync(new KırmızıEtKategorisiView());
+            await Navigation.PushModalAsync(new MeyveView());
         }
 
         

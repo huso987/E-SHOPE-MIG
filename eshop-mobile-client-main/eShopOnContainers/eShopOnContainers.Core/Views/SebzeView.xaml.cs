@@ -1,9 +1,7 @@
 ﻿using eShopOnContainers.Core.Models.Item;
 using eShopOnContainers.Core.Services.Marketing;
-using eShopOnContainers.Core.ViewModels;
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,9 +17,7 @@ namespace eShopOnContainers.Core.Views
         ProductService productService = new ProductService();
         public SebzeView()
         {
-
             InitializeComponent();
-            
         }
 
         private async void Button_Clicked(object sender, EventArgs e)
@@ -36,7 +32,6 @@ namespace eShopOnContainers.Core.Views
             productToBasket.ProductName = obj.ProductName;
             productToBasket.ProductImageUrl = obj.ProductImageUrl;
             productToBasket.UnitPrice = obj.UnitPrice;
-
 
             await productService.AddBasket(productToBasket);
 
@@ -61,7 +56,7 @@ namespace eShopOnContainers.Core.Views
             await DisplayAlert("Uyarı", "Favorilere Eklendi", "Tamam");
         }
 
-        private void sebzeListesi_ItemTapped(object sender, ItemTappedEventArgs e)
+        private void denizMahsulleriListesi_ItemTapped(object sender, ItemTappedEventArgs e)
         {
 
         }

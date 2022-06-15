@@ -3,41 +3,32 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
-using System.Windows.Input;
-using Xamarin.Forms;
 
 namespace eShopOnContainers.Core.ViewModels
 {
     public class SebzeViewModel
     {
 
-        public ObservableCollection<Product> SebzeListesi { get; set; }
 
-        
+        public ObservableCollection<Product> SebzeListesi { get; set; }
 
         public SebzeViewModel()
         {
 
-
             SebzeListesi = new ObservableCollection<Product>()
             {
-                new Product(1,1,"Domates (kg)","https://st2.myideasoft.com/idea/ad/25/myassets/products/210/domates-ne-kadar.jpg?revision=1634649401",17),
-                new Product(2,1,"Salatalık (kg)","https://ayb.akinoncdn.com/products/2021/09/01/7095/7a472d55-53f1-40b0-8a80-d1b28985eeea_size780x780_quality60_cropCenter.jpg",20),
-                new Product(3,1,"Pırasa (kg)","https://migros-dali-storage-prod.global.ssl.fastly.net/sanalmarket/product/28330099/pirasa-kg-108f2f-1650x1650.jpg",13),
-                new Product(4,1,"Biber (kg)","http://www.cagri.com/Uploads/UrunResimleri/buyuk/biber-carliston-kg-6216.jpg",20),
-                new Product(5,1,"Havuç (kg)","http://www.cagri.com/Uploads/UrunResimleri/buyuk/havuc-kg-d07b.jpg",16),
+                new Product(15,2,"Domates Salkım 500 G Paket Adet","https://migros-dali-storage-prod.global.ssl.fastly.net/hemen/product/28089129/28089129-ca5410.jpg",35),
+                new Product(16,2,"Hıyar Badem 500 G Paket Adet","https://migros-dali-storage-prod.global.ssl.fastly.net/hemen/product/28136887/28136887-d4d1b2.jpg",25),
+                new Product(17,2,"Patlıcan Kemer 500 G Paket Adet","https://migros-dali-storage-prod.global.ssl.fastly.net/hemen/product/28309054/28309054-41821e.jpg",30),
+                new Product(18,2,"Mısır Adet" ,"https://migros-dali-storage-prod.global.ssl.fastly.net/hemen/product/28270004/misir-adet-d61636.jpg",55),
 
 
 
             };
+
+
+
         }
-
-
-
-
-        
-
-
 
 
     }

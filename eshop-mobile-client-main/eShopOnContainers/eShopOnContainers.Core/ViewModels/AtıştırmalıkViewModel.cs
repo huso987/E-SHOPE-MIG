@@ -29,12 +29,12 @@ namespace eShopOnContainers.Core.ViewModels
 
         private async Task MÇikolata()
         {
-            await Navigation.PushModalAsync(new SütView());
+            await Navigation.PushModalAsync(new ÇikolataView());
         }
 
         private async Task MBar()
         {
-            await Navigation.PushModalAsync(new YogurtView());
+            await Navigation.PushModalAsync(new BarView());
         }
 
      

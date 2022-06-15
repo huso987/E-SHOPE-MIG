@@ -32,12 +32,12 @@ namespace eShopOnContainers.Core.ViewModels
 
         private async Task MDondurulmuş()
         {
-            await Navigation.PushModalAsync(new CayView());
+            await Navigation.PushModalAsync(new DondurulmuşView());
         }
 
         private async Task MMeze()
         {
-            await Navigation.PushModalAsync(new SuView());
+            await Navigation.PushModalAsync(new MezeView());
         }
     }
 }

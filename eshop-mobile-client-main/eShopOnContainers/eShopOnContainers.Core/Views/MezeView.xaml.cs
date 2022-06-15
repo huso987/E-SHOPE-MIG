@@ -12,10 +12,10 @@ using Xamarin.Forms.Xaml;
 namespace eShopOnContainers.Core.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class MeyveView : ContentPage
+    public partial class MezeView : ContentPage
     {
         ProductService productService = new ProductService();
-        public MeyveView()
+        public MezeView()
         {
             InitializeComponent();
         }
@@ -32,7 +32,6 @@ namespace eShopOnContainers.Core.Views
             productToBasket.ProductName = obj.ProductName;
             productToBasket.ProductImageUrl = obj.ProductImageUrl;
             productToBasket.UnitPrice = obj.UnitPrice;
-
 
             await productService.AddBasket(productToBasket);
 
@@ -57,7 +56,7 @@ namespace eShopOnContainers.Core.Views
             await DisplayAlert("Uyarı", "Favorilere Eklendi", "Tamam");
         }
 
-        private void kırmızıEtListesi_ItemTapped(object sender, ItemTappedEventArgs e)
+        private void suListesi_ItemTapped(object sender, ItemTappedEventArgs e)
         {
 
         }
