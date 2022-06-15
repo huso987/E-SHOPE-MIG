@@ -4,78 +4,30 @@
              x:Class="eShopOnContainers.Core.Views.HareketeGeç"
              xmlns:viewmodels="clr-namespace:eShopOnContainers.Core.ViewModels"
              x:DataType="viewmodels:HareketeGeçViewModel">
-    <ContentPage.Content>
-        <StackLayout>
+    <ContentPage.Resources>
 
-            <Frame CornerRadius="10" IsClippedToBounds="True" Padding="0" Margin="5">
-                <SearchBar Placeholder="Ürün Ara" BackgroundColor="White"/>
-            </Frame>
+        <ResourceDictionary>
+            <Color x:Key="Accent">#ffc200</Color>
 
-
-            <StackLayout Orientation="Vertical">
-
-                <StackLayout>
-
-                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center" Margin="3">
-
-                        <StackLayout>
-
-                            <Frame BorderColor="LightGray" CornerRadius="8">
-
-                                <ImageButton WidthRequest="80" HeightRequest="80" BackgroundColor="White" Command="{Binding BebekBeziButonu}"
-                    
-                                Source="https://previews.123rf.com/images/shauerman/shauerman2002/shauerman200200027/139491013-disposable-white-baby-diaper-panties-on-a-white-background-isolated.jpg" 
-                                />
-
-                            </Frame>
+        </ResourceDictionary>
+    </ContentPage.Resources>
 
 
 
-                            <Label Text="Bebek Bezi" TextColor="Black" />
 
-                        </StackLayout>
-
-                        <StackLayout>
-
-                            <Frame BorderColor="LightGray" CornerRadius="8">
-
-                                <ImageButton WidthRequest="80" HeightRequest="80" BackgroundColor="White" Command="{Binding IslakHavluButonu}"
-                    
-                                Source="https://previews.123rf.com/images/doomu/doomu1712/doomu171200081/92410679-blue-blank-packaging-paper-wet-wipes-pouch-on-a-white-background-3d-rendering.jpg" 
-                                />
-
-                            </Frame>
-
-                            <Label Text="Islak Havlu" TextColor="Black" />
-
-                        </StackLayout>
-
-                        <StackLayout>
-
-                            <Frame BorderColor="LightGray" CornerRadius="8">
-
-                                <ImageButton WidthRequest="80" HeightRequest="80" BackgroundColor="White" Command="{Binding BebekSampuaniButonu}"
-                    
-                                Source="https://previews.123rf.com/images/belchonock/belchonock1903/belchonock190308543/118790417-baby-cosmetic-products-and-toy-on-white-background.jpg" 
-                                />
-
-                            </Frame>
-
-                            <Label Text="Bebek Şampuanı" TextColor="Black" />
-
-                        </StackLayout>
-                    </StackLayout>
+    <ScrollView>
 
 
-                </StackLayout>
+        <StackLayout Orientation="Vertical">
+            <StackLayout Orientation="Horizontal">
 
-
-
+                <Button Text="Sağlık Takviyeleri"  TextColor="Black"  BackgroundColor="#ffc200" Command="{Binding SağlıkTakviyeleri}" />
+                <Button Text="Sporcu İçeceği"  TextColor="Black" BackgroundColor="#ffc200" Command="{Binding Sporcuİçecegi}" />
 
             </StackLayout>
 
 
-
         </StackLayout>
-    </ContentPage.Content>
+
+    </ScrollView>
 </ContentPage>
