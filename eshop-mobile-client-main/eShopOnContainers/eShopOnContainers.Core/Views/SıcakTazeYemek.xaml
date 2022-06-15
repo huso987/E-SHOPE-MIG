@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="eShopOnContainers.Core.Views.SıcakTazeYemek"
+             Title="Sıcak - Taze Yemek"
+             >
+
+    <ContentPage.Resources>
+
+        <ResourceDictionary>
+            <Color x:Key="Accent">#ffc200</Color>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ScrollView>
+
+
+        <StackLayout Orientation="Vertical">
+            <StackLayout Orientation="Horizontal">
+
+                <Button Text="Migros Ev Lezetleri" x:Name="N1" TextColor="Black"  BackgroundColor="White"  />
+                <Button Text="Pizza MiGo" x:Name="N2" TextColor="Black" BackgroundColor="White"  />
+
+            </StackLayout>
+
+
+        </StackLayout>
+
+    </ScrollView>
+
+
+</ContentPage>
