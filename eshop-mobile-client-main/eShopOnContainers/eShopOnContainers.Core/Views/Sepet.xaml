@@ -36,7 +36,7 @@
                                             <StackLayout>
 
 
-                                                <ImageButton Source="https://pics.freeicons.io/uploads/icons/png/14974663671582988848-512.png" BackgroundColor="White" HorizontalOptions="Start" Clicked="ImageButton_Clicked" WidthRequest="25"></ImageButton>
+                                                <ImageButton Source="https://pics.freeicons.io/uploads/icons/png/16618812301557740370-64.png" BackgroundColor="White" HorizontalOptions="Start" Clicked="ImageButton_Clicked" WidthRequest="25"></ImageButton>
 
 
 
