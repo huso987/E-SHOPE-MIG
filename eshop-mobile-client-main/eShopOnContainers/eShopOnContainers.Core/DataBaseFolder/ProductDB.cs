@@ -13,7 +13,7 @@ namespace eShopOnContainers.Core.DatabaseFolder
     public class ProductDB
     {
 
-        readonly FirebaseClient firebase = new FirebaseClient("https://customerlist123-42a86-default-rtdb.firebaseio.com/");
+        readonly FirebaseClient firebase = new FirebaseClient("https://migroshacerhuso-default-rtdb.europe-west1.firebasedatabase.app/");
 
         public async Task SaveProductToBasket(Product product)
         {
