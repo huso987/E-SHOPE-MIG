@@ -3,6 +3,7 @@ using eShopOnContainers.Core.Models.User;
 using eShopOnContainers.Core.Services.Identity;
 using eShopOnContainers.Core.Services.OpenUrl;
 using eShopOnContainers.Core.Services.Settings;
+using eShopOnContainers.Core.Services.User;
 using eShopOnContainers.Core.Validations;
 using eShopOnContainers.Core.ViewModels.Base;
 using IdentityModel.Client;
@@ -23,6 +24,7 @@ namespace eShopOnContainers.Core.ViewModels
         private bool _isValid;
         private bool _isLogin;
         private string _authUrl;
+        UserService  userService =new UserService();
 
         private ISettingsService _settingsService;
         private IOpenUrlService _openUrlService;
@@ -110,10 +112,17 @@ namespace eShopOnContainers.Core.ViewModels
         public ICommand NavigateCommand => new Command<string>(async (url) => await NavigateAsync(url));
 
         public ICommand SettingsCommand => new Command(async () => await SettingsAsync());
+        public ICommand LoginClicked => new Command(LoginClickedButton);
 
         public ICommand ValidateUserNameCommand => new Command(() => ValidateUserName());
 
         public ICommand ValidatePasswordCommand => new Command(() => ValidatePassword());
+
+
+        private async void LoginClickedButton()
+        {
+            await userService.Add(this.UserName);
+        }
 
         public override Task InitializeAsync (IDictionary<string, string> query)
         {
