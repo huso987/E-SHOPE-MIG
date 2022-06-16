@@ -15,7 +15,7 @@ namespace eShopOnContainers.Core.DatabaseFolder
 
         readonly FirebaseClient firebase = new FirebaseClient("https://migroshacerhuso-default-rtdb.europe-west1.firebasedatabase.app/");
 
-        public async Task SaveProductToBasket(Product product)
+        public async Task ÜrünleriSepeteEkle(Product product)
         {
 
 
@@ -24,7 +24,7 @@ namespace eShopOnContainers.Core.DatabaseFolder
 
         }
 
-        public async Task SaveProductToFavorite(Product product)
+        public async Task UrünleriFavoriyeEkle(Product product)
         {
 
             await firebase.Child("Favoriler").PostAsync(JsonConvert.SerializeObject(product));
@@ -32,21 +32,21 @@ namespace eShopOnContainers.Core.DatabaseFolder
 
         }
 
-        public async Task DeleteProductFromBasket(int productId)
+        public async Task SepettenÜrünleriSil(int productId)
         {
             var deleteProduct = (await firebase.Child("Sepet").OnceAsync<Product>()).Where(a => a.Object.Id == productId).FirstOrDefault();
             await firebase.Child("Sepet").Child(deleteProduct.Key).DeleteAsync();
 
         }
 
-        public async Task DeleteProductFromFavorite(int productId)
+        public async Task FavoridenÜrünleriSil(int productId)
         {
             var deleteProduct = (await firebase.Child("Favoriler").OnceAsync<Product>()).Where(a => a.Object.Id == productId).FirstOrDefault();
             await firebase.Child("Favoriler").Child(deleteProduct.Key).DeleteAsync();
 
         }
 
-        public async Task<List<Product>> GetAllProduct()
+        public async Task<List<Product>> ÜrünleriGetir()
         {
 
             return (await firebase
@@ -62,7 +62,7 @@ namespace eShopOnContainers.Core.DatabaseFolder
 
         }
 
-        public async Task<List<Product>> GetAllProductFromBasket()
+        public async Task<List<Product>> SeppetenÜrünleriGetir()
         {
 
             return (await firebase
@@ -78,7 +78,7 @@ namespace eShopOnContainers.Core.DatabaseFolder
         }
 
 
-        public async Task<List<Product>> GetAllProductFromFavorite()
+        public async Task<List<Product>> FavoridenÜrünleriGetir()
         {
 
             return (await firebase

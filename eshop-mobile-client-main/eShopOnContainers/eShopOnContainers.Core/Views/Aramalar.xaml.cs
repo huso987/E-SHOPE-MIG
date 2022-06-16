@@ -26,14 +26,14 @@ namespace eShopOnContainers.Core.Views
         protected async override void OnAppearing()
         {
             base.OnAppearing();
-            var urunler = await productService.GetAllProduct();
+            var urunler = await productService.UrünleriGetir();
             urunListesi.ItemsSource = urunler;
         }
 
         private async void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
         {
 
-            var urunler = productService.GetAllProduct();
+            var urunler = productService.UrünleriGetir();
 
             if (string.IsNullOrEmpty(e.NewTextValue))
             {

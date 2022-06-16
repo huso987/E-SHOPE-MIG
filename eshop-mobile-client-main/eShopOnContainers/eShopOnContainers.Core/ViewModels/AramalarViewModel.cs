@@ -25,7 +25,7 @@ namespace eShopOnContainers.Core.ViewModels
 
         public  Task<List<Product>> FindAllProduct()
         {
-            return Task.Run(() => productService.GetAllProduct());
+            return Task.Run(() => productService.UrünleriGetir());
         }
 
 

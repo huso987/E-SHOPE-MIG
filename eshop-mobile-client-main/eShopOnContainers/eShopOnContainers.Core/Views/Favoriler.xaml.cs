@@ -24,7 +24,7 @@ namespace eShopOnContainers.Core.Views
         {
 
             base.OnAppearing();
-            var favoriteProductList = await productService.GetAllProductFromFavorite();
+            var favoriteProductList = await productService.FavoridenÜrünleriGetir();
             favorilerdekiÜrünler.ItemsSource = favoriteProductList;
         }
 
@@ -35,8 +35,8 @@ namespace eShopOnContainers.Core.Views
             var button = (ImageButton)sender;
             var item = (Product)button.BindingContext;
             selectedProduct.Id = item.Id;
-            await productService.RemoveFavorite(selectedProduct.Id);
-            var favoriteProductList = await productService.GetAllProductFromFavorite();
+            await productService.FavoridenKaldır(selectedProduct.Id);
+            var favoriteProductList = await productService.FavoridenÜrünleriGetir();
             favorilerdekiÜrünler.ItemsSource = favoriteProductList;
 
 

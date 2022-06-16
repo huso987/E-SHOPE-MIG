@@ -20,52 +20,52 @@ namespace eShopOnContainers.Core.Services.Marketing
         }
 
 
-        public async Task AddBasket(Product product)
+        public async Task SepeteEkle(Product product)
         {
 
-            await productDb.SaveProductToBasket(product);
+            await productDb.ÜrünleriSepeteEkle(product);
 
         }
 
-        public async Task AddFavorite(Product product)
+        public async Task FavoriyeEkle(Product product)
         {
 
-            await productDb.SaveProductToFavorite(product);
+            await productDb.UrünleriFavoriyeEkle(product);
 
         }
 
-        public async Task<List<Product>> GetAllProduct()
+        public async Task<List<Product>> UrünleriGetir()
         {
 
-            return await productDb.GetAllProduct();
+            return await productDb.ÜrünleriGetir();
 
         }
 
-        public async Task RemoveBasket(int productId)
+        public async Task SepettenKaldır(int productId)
         {
 
-            await productDb.DeleteProductFromBasket(productId);
+            await productDb.SepettenÜrünleriSil(productId);
 
         }
 
-        public async Task RemoveFavorite(int productId)
+        public async Task FavoridenKaldır(int productId)
         {
 
-            await productDb.DeleteProductFromFavorite(productId);
+            await productDb.FavoridenÜrünleriSil(productId);
 
         }
 
-        public async Task<List<Product>> GetAllProductFromBasket()
+        public async Task<List<Product>> SepettenÜrünleriGetir()
         {
 
-            return await productDb.GetAllProductFromBasket();
+            return await productDb.SeppetenÜrünleriGetir();
 
         }
 
-        public async Task<List<Product>> GetAllProductFromFavorite()
+        public async Task<List<Product>> FavoridenÜrünleriGetir()
         {
 
-            return await productDb.GetAllProductFromFavorite();
+            return await productDb.FavoridenÜrünleriGetir();
 
         }
 

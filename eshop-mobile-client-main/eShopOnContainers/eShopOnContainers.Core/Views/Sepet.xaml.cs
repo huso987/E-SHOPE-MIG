@@ -24,7 +24,7 @@ namespace eShopOnContainers.Core.Views
         {
 
             base.OnAppearing();
-            var productsFromBasket = await productService.GetAllProductFromBasket();
+            var productsFromBasket = await productService.SepettenÜrünleriGetir();
             sepettekiUrunler.ItemsSource = productsFromBasket;
 
 
@@ -37,8 +37,8 @@ namespace eShopOnContainers.Core.Views
             var item = (Product)button.BindingContext;
 
             selectedProduct.Id = item.Id;
-            await productService.RemoveBasket(selectedProduct.Id);
-            var productsFromBasket = await productService.GetAllProductFromBasket();
+            await productService.SepettenKaldır(selectedProduct.Id);
+            var productsFromBasket = await productService.SepettenÜrünleriGetir();
             sepettekiUrunler.ItemsSource = productsFromBasket;
 
 

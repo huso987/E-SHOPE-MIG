@@ -38,7 +38,7 @@ namespace eShopOnContainers.Core.Views
             productToBasket.UnitPrice = obj.UnitPrice;
 
 
-            await productService.AddBasket(productToBasket);
+            await productService.SepeteEkle(productToBasket);
 
             await DisplayAlert("Uyarı", "Sepete Eklendi", "Tamam");
         }
@@ -56,7 +56,7 @@ namespace eShopOnContainers.Core.Views
             productToFavorite.ProductImageUrl = obj.ProductImageUrl;
             productToFavorite.UnitPrice = obj.UnitPrice;
 
-            await productService.AddFavorite(productToFavorite);
+            await productService.FavoriyeEkle(productToFavorite);
 
             await DisplayAlert("Uyarı", "Favorilere Eklendi", "Tamam");
         }
