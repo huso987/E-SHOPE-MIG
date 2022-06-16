@@ -41,6 +41,9 @@
     <EmbeddedResource Include="Fonts\Font_Awesome_5_Free-Solid-900.otf" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Views\SepetView.xaml.cs">
+      <DependentUpon>SepetView.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\SporcuİView.xaml.cs">
       <DependentUpon>SporcuİView.xaml</DependentUpon>
     </Compile>
@@ -151,7 +154,7 @@
     <EmbeddedResource Update="Views\PizzaMiGView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\Sepet.xaml">
+    <EmbeddedResource Update="Views\SepetView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\MezeView.xaml">

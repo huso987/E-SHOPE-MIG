@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace eShopOnContainers.Core.Services.Marketing
 {
-    public class ProductService
+    public class ProductService :IProductService
     {
 
 
